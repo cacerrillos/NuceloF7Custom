@@ -44,18 +44,16 @@
 #define USE_EXTI
 
 #define MAG
-#define USE_MAG_AK8963
-// #define MAG_I2C_INSTANCE           (I2CDEV_2)
-#define MAG_AK8963_ALIGN        CW270_DEG
-
+#define USE_MAG_HMC5883
+#define MAG_I2C_INSTANCE           (I2CDEV_2)
 
 //#define MAG_HMC5883_ALIGN CW270_DEG_FLIP
 //#define MAG_HMC5883_ALIGN CW90_DEG
 
-// #define BARO
-// #define USE_BARO_MS5611
-// #define USE_BARO_BMP280
-// #define BARO_I2C_INSTANCE           (I2CDEV_2)
+#define BARO
+#define USE_BARO_MS5611
+#define USE_BARO_BMP280
+#define BARO_I2C_INSTANCE           (I2CDEV_2)
 
 #define USABLE_TIMER_CHANNEL_COUNT 16
 
