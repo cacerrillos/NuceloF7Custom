@@ -17,43 +17,46 @@
 
 #pragma once
 
-#define TARGET_BOARD_IDENTIFIER "F7F7"
+#define TARGET_BOARD_IDENTIFIER "NUCELOF7CUSTOM"
 
-#define USBD_PRODUCT_STRING "Cabools F7"
+#define USBD_PRODUCT_STRING "Custom F7"
 
 #define LED0_PIN   PB7
-#define LED1_PIN   PB6
+#define LED1_PIN   PB0
 
-#define BEEPER   PB2 // Unused pin, can be mapped to elsewhere
-#define BEEPER_INVERTED
+// #define BEEPER   PB2 // Unused pin, can be mapped to elsewhere
+// #define BEEPER_INVERTED
 
-#define MPU6000_CS_PIN        PA4
-#define MPU6000_SPI_INSTANCE  SPI1
+// MPU9250 interrupt
+#define USE_EXTI
+#define MPU_INT_EXTI            PE15//PC4
+//#define DEBUG_MPU_DATA_READY_INTERRUPT
 
-#define ACC
-#define USE_ACC_SPI_MPU6000
-#define ACC_MPU6000_ALIGN CW270_DEG
+// #define USE_MPU_DATA_READY_SIGNAL
+// #define ENSURE_MPU_DATA_READY_IS_LOW
+
+#define MPU9250_CS_PIN          PA4
+#define MPU9250_SPI_INSTANCE    SPI1
+
 
 #define GYRO
-#define USE_GYRO_SPI_MPU6000
-#define GYRO_MPU6000_ALIGN CW270_DEG
+#define USE_GYRO_SPI_MPU9250
+#define GYRO_MPU9250_ALIGN      CW270_DEG
 
-// MPU6000 interrupts
-#define USE_MPU_DATA_READY_SIGNAL
-#define MPU_INT_EXTI PC4
-#define USE_EXTI
+#define ACC
+#define USE_ACC_SPI_MPU9250
+#define ACC_MPU9250_ALIGN       CW270_DEG
+
 
 #define MAG
-#define USE_MAG_HMC5883
-#define MAG_I2C_INSTANCE           (I2CDEV_2)
+#define USE_MAG_AK8963
+#define MAG_AK8963_ALIGN        CW0_DEG_FLIP
 
-//#define MAG_HMC5883_ALIGN CW270_DEG_FLIP
-//#define MAG_HMC5883_ALIGN CW90_DEG
 
-#define BARO
-#define USE_BARO_MS5611
-#define USE_BARO_BMP280
-#define BARO_I2C_INSTANCE           (I2CDEV_2)
+// #define BARO
+// #define USE_BARO_MS5611
+// #define USE_BARO_BMP280
+// #define BARO_I2C_INSTANCE           (I2CDEV_2)
 
 #define USABLE_TIMER_CHANNEL_COUNT 16
 
@@ -98,11 +101,18 @@
 #define SERIAL_PORT_COUNT 11 //VCP, USART1, USART2, USART3, UART4, UART5, USART6, USART7, USART8, SOFTSERIAL x 2
 
 #define USE_ESCSERIAL
-#define ESCSERIAL_TIMER_TX_PIN  PB14 // (Hardware=0, PPM)
+#define ESCSERIAL_TIMER_TX_PIN  PE3//PB14 // (Hardware=0, PPM)
 
 #define USE_SPI
-#define USE_SPI_DEVICE_1
+#define USE_SPI_DEVICE_1 //MPU9250
 #define USE_SPI_DEVICE_4
+
+// #define USE_SPI_DEVICE_1
+// #define SPI1_NSS_PIN            PC4
+// #define SPI1_SCK_PIN            PA5
+// #define SPI1_MISO_PIN           PA6
+// #define SPI1_MOSI_PIN           PA7
+
 
 #define SPI1_NSS_PIN            PA4
 #define SPI1_SCK_PIN            PA5

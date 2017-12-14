@@ -1,13 +1,12 @@
-# AnyFC-F7
+# NUCLEOF7 CUSTOM
 
-* The first F7 board flown with betaflight and inavflight, made by [@sambas](https://github.com/sambas)
-* OSHW CC BY-SA 3.0
-* Source: https://github.com/sambas/hw/tree/master/AnyFCF7
-* 1st betaflight: https://www.youtube.com/watch?v=tv7k3A0FG80
-* 1st inavflight: https://www.youtube.com/watch?v=kJvlZAzprBs
+
+* Nucleo F7 dev board with a IMU.
 
 ## HW info
 
+
+The following is incorrect at the moment.
 * STM32F745VGT6 100lqfp 216MHz
 * MPU6000 SPI
 * MS5611 baro
